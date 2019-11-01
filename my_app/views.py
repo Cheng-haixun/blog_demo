@@ -49,23 +49,4 @@ class PostView(View):
                 Comment.objects.create(comment_content=comment, user=user, blog=blog_obj)
             blog_obj.comment_count += 1
             blog_obj.save()
-
-        # username = request.POST.get("username")
-        # email = request.POST.get("email")
-        # comment = request.POST.get("comment")
-        # user = User.objects.filter(user_name=username, user_email=email).first()
-        # uf = UserForm(request.POST)
-
-        #
-        # # print(user.u_id)
-        #
-        # if uf.is_valid():
-        #     if user:
-        #         print('enter...have user')
-        #         Comment.objects.create(comment_content=comment, user=user, blog=blog_obj)
-        #     else:
-        #         print('enter...no user')
-        #         User.objects.create(user_name=username, user_email=email)
-        #         user = User.objects.filter(user_name=username, user_email=email).first()
-        #         Comment.objects.create(comment_content=comment, user=user, blog=blog_obj)
         return redirect('/post/%s' %(b_id))
